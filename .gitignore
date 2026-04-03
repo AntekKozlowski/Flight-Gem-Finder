@@ -1,0 +1,12 @@
+# Klucze API i zmienne środowiskowe
+.env
+
+# Środowisko wirtualne Pythona
+.venv/
+venv/
+ENV/
+
+# Pamięć podręczna i pliki tymczasowe Pythona
+__pycache__/
+*.pyc
+.idea/
