@@ -106,5 +106,5 @@ pytest
 Every push or pull request to the `main` or `master` branch automatically triggers the GitHub Actions pipeline, setting up a Python environment and running the test suite to ensure code integrity.
 
 ## 👨‍💻 Author
-Antoni Kozłowski, Cyberseciurity Studnet
+Antoni Kozłowski, Cybersecurity Studnet
 
