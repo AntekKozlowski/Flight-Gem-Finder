@@ -32,17 +32,22 @@ The project strictly follows a Multi-Agent pattern, separating API tools from LL
 *   **Tool: API Client** (`api_client.py`): The hands of the operation. It connects to the outside world via SerpApi to fetch hard, live data.
 *   **Agent 2: Analyst** (`agent.py`): The brain of the operation. It processes the live data against the Planner's baselines, calculates a score, and makes a final verdict on the flight's quality using Pydantic.
 
-### Folder Structure:
+### 📂 Folder Structure
 
-```
-.github/workflows/test.yml (GitHub Actions CI pipeline)
-ai_planner.py (Agent 1 logic)
-agent.py (Agent 2 logic)
-api_client.py (Tool integration)
-main.py (Application orchestrator)
-test_api.py (Automated tests with mocked requests)
-Dockerfile & .dockerignore (Container configuration)
-requirements.txt (Python dependencies)
+```text
+Flight-Gem-Finder/
+├── .github/
+│   └── workflows/
+│       └── test.yml        # GitHub Actions CI pipeline
+├── ai_planner.py           # Agent 1: Planning & Geography
+├── agent.py                # Agent 2: Analysis & Verdict
+├── api_client.py           # Tool: External API integration
+├── main.py                 # Application entry point
+├── test_api.py             # Automated unit tests (Pytest)
+├── Dockerfile              # Docker image configuration
+├── .dockerignore           # Files excluded from Docker build
+├── requirements.txt        # Project dependencies
+└── .env                    # Environment secrets (Local only)
 ```
 
 ## ⚙️ Configuration (.env)
