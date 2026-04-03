@@ -1,5 +1,12 @@
 # ✈️ Flight Gem Finder (Multi-Agent AI System)
 
+![Status](https://img.shields.io/badge/Status-Stable-green)
+![Language](https://img.shields.io/badge/language-Python_3.11-blue)
+![Architecture](https://img.shields.io/badge/architecture-Multi--Agent-orange)
+![Container](https://img.shields.io/badge/platform-Docker-blue)
+![Testing](https://img.shields.io/badge/testing-Pytest-yellowgreen)
+![License](https://img.shields.io/badge/license-MIT-lightgrey)
+
 Flight Gem Finder is an autonomous, high-performance Multi-Agent AI System designed to act as a personal travel analyst. It features dynamic geography mapping, real-time flight data retrieval, LLM-driven market analysis, and full containerization.
 
 The project demonstrates advanced software engineering and AI integration, utilizing the OpenAI API for multi-agent orchestration, Pydantic for strict structured data validation, SerpApi for live web scraping, and Docker / GitHub Actions for modern CI/CD pipelines.
@@ -51,13 +58,20 @@ SERPAPI_KEY=YOUR_SERPAPI_KEY
 
 ### Option A: Run via Docker (Recommended)
 
-1.  **Build the image:**
+1. **First, clone the repository to your local machine:**
+
+     ```bash
+    git clone https://github.com/AntekKozlowski/Flight-Gem-Finder.git
+    cd Flight-Gem-Finder
+    ```
+
+3.  **Build the image:**
 
     ```bash
     docker build -t flight-agent .
     ```
 
-2.  **Run the container (passing the .env file):**
+4.  **Run the container (passing the .env file):**
 
     ```bash
     docker run --env-file .env -it flight-agent
