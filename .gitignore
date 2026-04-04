@@ -10,3 +10,7 @@ ENV/
 __pycache__/
 *.pyc
 .idea/
+
+# Bazy danych
+*.db
+*.sqlite3
