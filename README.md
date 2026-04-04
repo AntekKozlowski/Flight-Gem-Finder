@@ -35,16 +35,20 @@ The project strictly follows a Modular Multi-Agent pattern, separating API tools
 
 ```text
 Flight-Gem-Finder/
-├── .github/
-│   └── workflows/
-│       └── test.yml        # GitHub Actions CI pipeline
-├── agent.py                # Agent 2: Data Analyst (Evaluation & Scoring)
-├── ai_planner.py           # Agent 1: Geography & Planning (Routes & Transport)
-├── api_client.py           # External tool: Google Flights API integration
-├── database.py             # SQLite DB manager (History & API Caching)
+├── agents/                 # AI Logic & LLM Prompts
+│   ├── __init__.py
+│   ├── ai_planner.py       # Agent 1: Geography, Routes & Ground Transport
+│   └── ai_analyst.py       # Agent 2: Data Evaluation & Total Cost Scoring
+├── core/                   # Utilities & External Integrations
+│   ├── __init__.py
+│   ├── api_client.py       # External Tool: Google Flights API via SerpApi
+│   └── database.py         # SQLite DB Manager: History & API Caching
+├── tests/                  # Automated Test Suite
+│   ├── __init__.py
+│   └── test_api.py         # Pytest with mocked external requests
+├── scripts/                # Helper Scripts
+│   └── view_db.py          # Utility script to inspect local database records
 ├── main.py                 # Application entry point & orchestration
-├── test_api.py             # Automated unit tests (Pytest)
-├── view_db.py              # Utility script to inspect local database records
 ├── Dockerfile              # Docker image configuration
 ├── .dockerignore           # Files excluded from Docker build
 ├── .gitignore              # Files excluded from version control
