@@ -1,8 +1,9 @@
+import pytest
 from unittest.mock import patch
 from core.api_client import get_flight_details
 
-@patch('api_client.requests.get')
-@patch('api_client.get_cached_flight')
+@patch('core.api_client.requests.get')
+@patch('core.api_client.get_cached_flight')
 def test_get_flight_details_success(mock_get_cached, mock_get):
     """Tests successful flight data retrieval and parsing, bypassing the cache."""
     mock_get_cached.return_value = None
@@ -22,7 +23,8 @@ def test_get_flight_details_success(mock_get_cached, mock_get):
         }]
     }
 
-    with patch('api_client.save_cached_flight'):
+    # Zaktualizowana ścieżka wewnętrzna:
+    with patch('core.api_client.save_cached_flight'):
         result = get_flight_details("WAW", "LHR", "2026-10-10")
 
     assert result is not None
@@ -33,8 +35,8 @@ def test_get_flight_details_success(mock_get_cached, mock_get):
     assert result["departure_time"] == "2026-10-10 10:00"
     assert result["layovers"] == "Direct"
 
-@patch('api_client.requests.get')
-@patch('api_client.get_cached_flight')
+@patch('core.api_client.requests.get')
+@patch('core.api_client.get_cached_flight')
 def test_get_flight_details_no_results(mock_get_cached, mock_get):
     """Tests the module's behavior when the API returns no viable flights."""
     mock_get_cached.return_value = None
